@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>Spring Core Online Tutorial - List Customers</title>
+    <title>Spring Core - List Customers</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
@@ -19,6 +20,9 @@
     <div th:if="${not #lists.isEmpty(customers)}">
         <h2>Customer List</h2>
         <h2 th:text="${@user.getSessionId()}">...</h2>
+        <p sec:authentication="name">
+            The value of the "name" property of the authentication object should appear here.
+        </p>
         <table class="table table-striped">
             <tr>
                 <th>Id</th>
