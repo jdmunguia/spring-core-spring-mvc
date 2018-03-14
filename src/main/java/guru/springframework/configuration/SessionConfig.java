@@ -1,14 +1,13 @@
 package guru.springframework.configuration;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
-@EnableRedisHttpSession
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
+
+@Configuration
+@EnableJdbcHttpSession
 public class SessionConfig {
 
-    @Bean
-    public LettuceConnectionFactory connectionFactory() {
-        return new LettuceConnectionFactory();
-    }
+
 }

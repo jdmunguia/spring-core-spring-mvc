@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head lang="en">
 
-    <title>Spring Core Online Tutorial</title>
+    <title>Spring Core </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
@@ -20,8 +20,10 @@
 <div class="container">
     <h1>Hello World</h1>
     <h2 th:text="${@user.getSessionId()}">...</h2>
-    <p sec:authentication="name">
+    User Name:<p sec:authentication="name">
         The value of the "name" property of the authentication object should appear here.
+    </p>
+    Node :<p th:text="${@environment.getProperty('app.name')}">
     </p>
 
     <ul>
